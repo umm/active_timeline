@@ -1,0 +1,12 @@
+{
+    "name": "umm@active_timeline-Editor",
+    "references": [
+        "umm@active_timeline"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

@@ -1,0 +1,12 @@
+{
+    "name": "umm@active_timeline",
+    "references": [
+        "umm@unirx",
+        "umm@unirx_tense",
+        "umm@element_title_attribute"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

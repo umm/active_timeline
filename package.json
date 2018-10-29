@@ -1,0 +1,33 @@
+{
+  "name": "@umm/active_timeline",
+  "version": "0.0.0",
+  "description": "Add some interactive implementation to the Timeline",
+  "homepage": "https://github.com/umm/active_timeline",
+  "bugs": {
+    "url": "https://github.com/umm/active_timeline/issues"
+  },
+  "scripts": {
+    "umm:init": "umm-init",
+    "umm:generate_assembly_definition": "umm-generate_assembly_definition",
+    "umm:module:install": "umm-module-install",
+    "umm:module:uninstall": "umm-module-uninstall",
+    "postinstall": "npm run --silent umm:module:install",
+    "postuninstall": "npm run --silent umm:module:uninstall"
+  },
+  "author": "Tetsuya Mori",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:umm/active_timeline"
+  },
+  "files": [
+    "Assets"
+  ],
+  "dependencies": {
+    "@umm/element_title_attribute": "umm/element_title_attribute#^1.0.0",
+    "@umm/scripts": "umm/scripts#^1.0.0",
+    "@umm/unirx": "umm/unirx#^2.0.0",
+    "@umm/unirx_tense": "umm/unirx_tense#^1.0.0"
+  },
+  "devDependencies": {}
+}
