@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace ActiveTimeline.Condition
 {
-    [AddComponentMenu("ActiveTimeline/PointerEvent/Drop", (int)ConditionType.Drop)]
-    public class DropCondition : PointerEventCondition
+    [AddComponentMenu("ActiveTimeline/Condition/PointerEvent/Drop", (int)ConditionType.Drop)]
+    public class DropCondition : PointerEventConditionBase
     {
         public override IObservable<Unit> OnFulfilledAsObservable()
         {

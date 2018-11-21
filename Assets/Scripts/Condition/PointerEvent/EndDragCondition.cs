@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace ActiveTimeline.Condition
 {
-    [AddComponentMenu("ActiveTimeline/PointerEvent/EndDrag", (int)ConditionType.EndDrag)]
-    public class EndDragCondition : PointerEventCondition
+    [AddComponentMenu("ActiveTimeline/Condition/PointerEvent/EndDrag", (int)ConditionType.EndDrag)]
+    public class EndDragCondition : PointerEventConditionBase
     {
         public override IObservable<Unit> OnFulfilledAsObservable()
         {

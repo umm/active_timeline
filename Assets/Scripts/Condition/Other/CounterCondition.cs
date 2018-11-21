@@ -7,11 +7,11 @@ using UnityEngine;
 
 namespace ActiveTimeline.Condition
 {
-    [AddComponentMenu("ActiveTimeline/Other/Counter", (int)ConditionType.Counter)]
-    public class CounterCondition : Condition
+    [AddComponentMenu("ActiveTimeline/Condition/Other/Counter", (int)ConditionType.Counter)]
+    public class CounterCondition : ConditionBase
     {
         [SerializeField] private int threshold;
-        [SerializeField] private List<Condition> conditionList;
+        [SerializeField] private List<ConditionBase> conditionList;
         [SerializeField] private bool resetOnSubscribe;
         private int Threshold => threshold;
         // 外部から条件を与えたい場合は SetCondition 的なメソッドを実装するとヨサソウ
