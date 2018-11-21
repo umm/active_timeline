@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace ActiveTimeline.Condition
 {
-    [AddComponentMenu("ActiveTimeline/PointerEvent/Down", (int)ConditionType.PointerDown)]
-    public class PointerDownCondition : PointerEventCondition
+    [AddComponentMenu("ActiveTimeline/Condition/PointerEvent/Down", (int)ConditionType.PointerDown)]
+    public class PointerDownCondition : PointerEventConditionBase
     {
         public override IObservable<Unit> OnFulfilledAsObservable()
         {

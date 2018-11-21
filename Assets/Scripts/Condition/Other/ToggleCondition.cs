@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace ActiveTimeline.Condition
 {
-    public class ToggleCondition : Condition
+    public class ToggleCondition : ConditionBase
     {
-        [SerializeField] private List<Condition> conditionList;
+        [SerializeField] private List<ConditionBase> conditionList;
         [SerializeField] private bool initialValue;
         [SerializeField] private bool resetOnSubscribe;
         private IEnumerable<ICondition> ConditionList => conditionList;

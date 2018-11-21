@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace ActiveTimeline.Condition
 {
-    [AddComponentMenu("ActiveTimeline/Other/Timer", (int)ConditionType.Timer)]
-    public class TimerCondition : Condition
+    [AddComponentMenu("ActiveTimeline/Condition/Other/Timer", (int)ConditionType.Timer)]
+    public class TimerCondition : ConditionBase
     {
         [SerializeField] private float duration;
         private float Duration => duration;

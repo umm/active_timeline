@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace ActiveTimeline.Condition
 {
-    [AddComponentMenu("ActiveTimeline/PointerEvent/Enter", (int)ConditionType.PointerEnter)]
-    public class PointerEnterCondition : PointerEventCondition
+    [AddComponentMenu("ActiveTimeline/Condition/PointerEvent/Enter", (int)ConditionType.PointerEnter)]
+    public class PointerEnterCondition : PointerEventConditionBase
     {
         public override IObservable<Unit> OnFulfilledAsObservable()
         {

@@ -1,10 +1,11 @@
 using ActiveTimeline.Enumerate;
+using ActiveTimeline.Value.Primitive;
 using UnityEngine;
 
 namespace ActiveTimeline.Condition
 {
-    [AddComponentMenu("ActiveTimeline/Primitive/Bool", (int)ConditionType.Bool)]
-    public class BoolCondition : AssertCondition<bool>
+    [AddComponentMenu("ActiveTimeline/Condition/Primitive/Bool", (int)ConditionType.Bool)]
+    public class BoolCondition : EqualityConditionBase<bool, BoolValue>
     {
     }
 }

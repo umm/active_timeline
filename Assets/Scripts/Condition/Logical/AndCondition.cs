@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace ActiveTimeline.Condition
 {
-    [AddComponentMenu("ActiveTimeline/Logical/And", (int)ConditionType.And)]
-    public class AndCondition : Condition
+    [AddComponentMenu("ActiveTimeline/Condition/Logical/And", (int)ConditionType.And)]
+    public class AndCondition : ConditionBase
     {
-        [SerializeField] private List<Condition> conditionList;
+        [SerializeField] private List<ConditionBase> conditionList;
         private IEnumerable<ICondition> ConditionList => conditionList;
 
         public override IObservable<Unit> OnFulfilledAsObservable()
