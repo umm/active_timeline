@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ActiveTimeline.Condition
 {
     [AddComponentMenu("ActiveTimeline/Condition/Primitive/Float", (int)ConditionType.Float)]
-    public class FloatCondition : EqualityConditionBase<float, FloatValue>
+    public class FloatCondition : ComparableConditionBase<float, FloatValue>
     {
     }
 }

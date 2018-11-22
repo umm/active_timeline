@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ActiveTimeline.Condition
 {
     [AddComponentMenu("ActiveTimeline/Condition/Primitive/Int", (int)ConditionType.Int)]
-    public class IntCondition : EqualityConditionBase<int, IntValue>
+    public class IntCondition : ComparableConditionBase<int, IntValue>
     {
     }
 }

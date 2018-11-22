@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ActiveTimeline.Condition
 {
     [AddComponentMenu("ActiveTimeline/Condition/Primitive/String", (int)ConditionType.String)]
-    public class StringCondition : EqualityConditionBase<string, StringValue>
+    public class StringCondition : EquatableConditionBase<string, StringValue>
     {
     }
 }

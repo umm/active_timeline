@@ -7,12 +7,12 @@ using UnityEngine;
 namespace ActiveTimeline.Condition
 {
     [PublicAPI]
-    public abstract class EqualityConditionBase<T, TConcrete> : ConditionBase
+    public abstract class EquatableConditionBase<T, TConcrete> : ConditionBase
         where T : IEquatable<T>
         where TConcrete : ValueBase<T>
     {
-        [SerializeField] private TConcrete expected;
-        [SerializeField] private TConcrete actual;
+        [SerializeField] protected TConcrete expected;
+        [SerializeField] protected TConcrete actual;
 
         protected T Expected
         {

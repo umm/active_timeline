@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ActiveTimeline.Condition
 {
     [AddComponentMenu("ActiveTimeline/Condition/Primitive/Bool", (int)ConditionType.Bool)]
-    public class BoolCondition : EqualityConditionBase<bool, BoolValue>
+    public class BoolCondition : EquatableConditionBase<bool, BoolValue>
     {
     }
 }
