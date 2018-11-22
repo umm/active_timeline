@@ -17,6 +17,7 @@ namespace ActiveTimeline.Condition
         private static IDictionary<Operand, Func<T, T, bool>> OperandDelegateMap { get; } = new Dictionary<Operand, Func<T, T, bool>>
         {
             {Operand.Equal, (arg1, arg2) => Equals(arg1, arg2)},
+            {Operand.NotEqual, (arg1, arg2) => !Equals(arg1, arg2)},
             {Operand.GreaterThan, (arg1, arg2) => arg1.CompareTo(arg2) < 0},
             {Operand.GreaterThanOrEqual, (arg1, arg2) => arg1.CompareTo(arg2) <= 0},
             {Operand.LessThan, (arg1, arg2) => arg1.CompareTo(arg2) > 0},
