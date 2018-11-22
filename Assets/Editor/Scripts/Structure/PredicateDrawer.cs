@@ -63,6 +63,10 @@ namespace ActiveTimeline.Structure
                         EditorGUI.PropertyField(rect, property.FindPropertyRelative("playableDirector"));
                         NewLine(ref rect);
                         break;
+                    case TargetType.Event:
+                        EditorGUI.PropertyField(rect, property.FindPropertyRelative("eventTrigger"));
+                        NewLine(ref rect);
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }

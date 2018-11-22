@@ -1,4 +1,5 @@
 using System;
+using ActiveTimeline.Component;
 using ActiveTimeline.Condition;
 using ActiveTimeline.Enumerate;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace ActiveTimeline.Structure
         int Frame { get; }
         string Label { get; }
         ExposedReference<PlayableDirector> PlayableDirector { get; }
+        ExposedReference<EventTrigger> EventTrigger { get; }
     }
 
     [Serializable]
@@ -40,6 +42,7 @@ namespace ActiveTimeline.Structure
         [SerializeField] private int frame;
         [SerializeField] private string label;
         [SerializeField] private ExposedReference<PlayableDirector> playableDirector;
+        [SerializeField] private ExposedReference<EventTrigger> eventTrigger;
         public ExposedReference<ConditionBase> Condition => condition;
         public bool CheckEveryFrame => checkEveryFrame;
         public TargetType TargetType => targetType;
@@ -95,5 +98,6 @@ namespace ActiveTimeline.Structure
                 condition = condition,
             };
         }
+        public ExposedReference<EventTrigger> EventTrigger => eventTrigger;
     }
 }

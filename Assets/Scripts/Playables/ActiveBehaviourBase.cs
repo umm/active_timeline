@@ -96,6 +96,9 @@ namespace ActiveTimeline.Playables
                 case TargetType.PlayableDirector:
                     predicate.PlayableDirector.Resolve(ExposedPropertyTable).Play();
                     break;
+                case TargetType.Event:
+                    predicate.EventTrigger.Resolve(ExposedPropertyTable).OnTrigger.Invoke();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

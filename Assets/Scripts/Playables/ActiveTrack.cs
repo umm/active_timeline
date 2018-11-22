@@ -11,7 +11,6 @@ namespace ActiveTimeline.Playables
     [TrackClipType(typeof(SwitchClip))]
     [TrackClipType(typeof(LoopClip))]
     [TrackClipType(typeof(WaitClip))]
-    [TrackClipType(typeof(EventClip))]
     public class ActiveTrack : TrackAsset
     {
         public Dictionary<string, Marker> MarkerMap { get; private set; }
