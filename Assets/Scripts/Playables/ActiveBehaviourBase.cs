@@ -95,8 +95,6 @@ namespace ActiveTimeline.Playables
                     break;
                 case TargetType.PlayableDirector:
                     predicate.PlayableDirector.Resolve(ExposedPropertyTable).Play();
-                    ActiveMixerBehaviour.Pause();
-                    ActiveMixerBehaviour.SetTime(ActiveMixerBehaviour.GetDuration());
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
