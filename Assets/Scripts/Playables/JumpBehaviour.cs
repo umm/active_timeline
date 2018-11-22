@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace ActiveTimeline.Playables
 {
-
     [Serializable]
     public class JumpBehaviour : ConditionalActiveBehaviourBase
     {

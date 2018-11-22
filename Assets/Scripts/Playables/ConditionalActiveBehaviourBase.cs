@@ -28,8 +28,8 @@ namespace ActiveTimeline.Playables
         {
             return Observable
                 .Zip(
-                    ResolveTimingObservable(predicate).Do(_ => UnityEngine.Debug.Log("ResolveTimingObservable")),
-                    ResolveFulfilledObservable(predicate).Do(_ => UnityEngine.Debug.Log("ResolveFulfilledObservable"))
+                    ResolveTimingObservable(predicate),
+                    ResolveFulfilledObservable(predicate)
                 )
                 .AsUnitObservable();
         }
