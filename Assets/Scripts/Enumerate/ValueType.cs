@@ -7,5 +7,11 @@ namespace ActiveTimeline.Enumerate
         Int,
         Float,
         String,
+        Counter,
+        Timer,
+        RandomBool,
+        RandomInt,
+        RandomFloat,
+        RandomString,
     }
 }
