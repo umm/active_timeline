@@ -65,4 +65,13 @@ namespace ActiveTimeline.Playables
         {
         }
     }
+
+    [CustomPropertyDrawer(typeof(EventBehaviour))]
+    public class EventBehaviourDrawer : ActiveBehaviourDrawer
+    {
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("eventTriggerReference"), new GUIContent("Event Trigger"));
+        }
+    }
 }
