@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ActiveTimeline.Enumerate;
 using ActiveTimeline.Structure;
 using ExtraUniRx;
@@ -21,6 +22,7 @@ namespace ActiveTimeline.Playables
         public override void OnGraphStart(Playable playable)
         {
             ActiveMixerBehaviour = ((ScriptPlayable<ActiveMixerBehaviour>) playable.GetOutput(0)).GetBehaviour();
+            ActiveMixerBehaviour.ActiveBehaviourList.Add(this);
             ExposedPropertyTable = playable.GetGraph().GetResolver();
             if (!string.IsNullOrEmpty(Label) && ActiveMixerBehaviour.MarkerMap.ContainsKey(Label))
             {
@@ -102,6 +104,14 @@ namespace ActiveTimeline.Playables
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            // 全 ActiveBehaviour のウチ実行中のソレを強制的に End 扱いにする
+            ActiveMixerBehaviour
+                .ActiveTracks
+                .SelectMany(x => x.ActiveMixerBehaviour.ActiveBehaviourList)
+                .Where(x => x.IsProcessing())
+                .ToList()
+                .ForEach(x => x.End.Did());
         }
 
         protected abstract void Initialize();
