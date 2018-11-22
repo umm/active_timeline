@@ -1,15 +1,24 @@
 using System.Collections.Generic;
+using System.Linq;
 using ActiveTimeline.Structure;
 using UniRx;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 namespace ActiveTimeline.Playables
 {
     public class ActiveMixerBehaviour : PlayableBehaviour
     {
-        public Dictionary<string, Marker> MarkerMap { get; } = new Dictionary<string, Marker>();
+        public IDictionary<string, Marker> MarkerMap { get; } = new Dictionary<string, Marker>();
 
         public IReactiveProperty<double> TimeProperty { get; } = new ReactiveProperty<double>();
+
+        public IList<ActiveBehaviourBase> ActiveBehaviourList { get; } = new List<ActiveBehaviourBase>();
+
+        // 各 ActiveMixerBehaviour に持つのはどうかと思うが、妙案浮かばず…。
+        // PlayableDirector のインスタンス単位に配下の ActiveTrack をキャッシュしたいのだが、
+        // Singleton にするのも嫌なので無理矢理参照を持たせることにした
+        public IEnumerable<ActiveTrack> ActiveTracks { get; private set; }
 
         public float FrameRate { get; set; } = 60.0f;
 
@@ -21,7 +30,8 @@ namespace ActiveTimeline.Playables
         {
             // コイツは UnityEngine.Timeline.TimelinePlayable であるコトを期待している
             RootPlayable = playable.GetGraph().GetRootPlayable(0);
-            PlayableDirector = playable.GetGraph().GetResolver() as PlayableDirector;
+            PlayableDirector = (PlayableDirector) playable.GetGraph().GetResolver();
+            ActiveTracks = ((TimelineAsset) PlayableDirector.playableAsset).GetOutputTracks().OfType<ActiveTrack>();
         }
 
         public override void ProcessFrame(Playable playable, FrameData info, object playerData)
