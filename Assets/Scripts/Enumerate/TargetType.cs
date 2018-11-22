@@ -9,5 +9,6 @@ namespace ActiveTimeline.Enumerate
         First,
         Last,
         PlayableDirector,
+        Event,
     }
 }

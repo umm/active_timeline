@@ -31,6 +31,5 @@ namespace ActiveTimeline.Condition
                 .Where(list => OperandDelegateMap[Operand](list[0], list[1]))
                 .AsUnitObservable();
         }
-
     }
 }

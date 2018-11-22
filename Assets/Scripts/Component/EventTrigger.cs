@@ -7,18 +7,11 @@ namespace ActiveTimeline.Component
     [AddComponentMenu("ActiveTimeline/Component/EventTrigger")]
     public class EventTrigger : MonoBehaviour
     {
-        [SerializeField] private OnStartEvent onStart = new OnStartEvent();
-        [SerializeField] private OnEndEvent onEnd = new OnEndEvent();
-        public OnStartEvent OnStart => onStart;
-        public OnEndEvent OnEnd => onEnd;
+        [SerializeField] private OnTriggerEvent onTrigger = new OnTriggerEvent();
+        public OnTriggerEvent OnTrigger => onTrigger;
 
         [Serializable]
-        public class OnStartEvent : UnityEvent
-        {
-        }
-
-        [Serializable]
-        public class OnEndEvent : UnityEvent
+        public class OnTriggerEvent : UnityEvent
         {
         }
     }
