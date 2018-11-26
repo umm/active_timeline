@@ -2,7 +2,7 @@ using UnityEngine.Timeline;
 
 namespace ActiveTimeline.Playables
 {
-    public class JumpClip : ActiveClipBase<JumpBehaviour>
+    public class GoToClip : ActiveClipBase<GoToBehaviour>
     {
         public override ClipCaps clipCaps => ClipCaps.Looping | ClipCaps.Blending | ClipCaps.Extrapolation | ClipCaps.ClipIn;
     }

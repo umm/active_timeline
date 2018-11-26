@@ -7,10 +7,7 @@ using UnityEngine.Timeline;
 namespace ActiveTimeline.Playables
 {
     [TrackClipType(typeof(LabelClip))]
-    [TrackClipType(typeof(JumpClip))]
-    [TrackClipType(typeof(SwitchClip))]
-    [TrackClipType(typeof(LoopClip))]
-    [TrackClipType(typeof(WaitClip))]
+    [TrackClipType(typeof(GoToClip))]
     public class ActiveTrack : TrackAsset
     {
         public IDictionary<string, Marker> MarkerMap { get; private set; }

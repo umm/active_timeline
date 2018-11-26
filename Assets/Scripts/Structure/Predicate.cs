@@ -2,6 +2,7 @@ using System;
 using ActiveTimeline.Component;
 using ActiveTimeline.Condition;
 using ActiveTimeline.Enumerate;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -23,16 +24,26 @@ namespace ActiveTimeline.Structure
         ExposedReference<EventTrigger> EventTrigger { get; }
     }
 
-    [Serializable]
+    [Serializable][PublicAPI]
     public struct Predicate : IPredicate
     {
         [SerializeField] private ExposedReference<ConditionBase> condition;
         [SerializeField] private bool checkEveryFrame;
-        public ExposedReference<ConditionBase> Condition => condition;
-        public bool CheckEveryFrame => checkEveryFrame;
+
+        public ExposedReference<ConditionBase> Condition
+        {
+            get { return condition; }
+            set { condition = value; }
+        }
+
+        public bool CheckEveryFrame
+        {
+            get { return checkEveryFrame; }
+            set { checkEveryFrame = value; }
+        }
     }
 
-    [Serializable]
+    [Serializable][PublicAPI]
     public struct TransitionablePredicate : ITransitionablePredicate
     {
         [SerializeField] private ExposedReference<ConditionBase> condition;
@@ -43,13 +54,53 @@ namespace ActiveTimeline.Structure
         [SerializeField] private string label;
         [SerializeField] private ExposedReference<PlayableDirector> playableDirector;
         [SerializeField] private ExposedReference<EventTrigger> eventTrigger;
-        public ExposedReference<ConditionBase> Condition => condition;
-        public bool CheckEveryFrame => checkEveryFrame;
-        public TargetType TargetType => targetType;
-        public double Time => time;
-        public int Frame => frame;
-        public string Label => label;
-        public ExposedReference<PlayableDirector> PlayableDirector => playableDirector;
-        public ExposedReference<EventTrigger> EventTrigger => eventTrigger;
+
+        public ExposedReference<ConditionBase> Condition
+        {
+            get { return condition; }
+            set { condition = value; }
+        }
+
+        public bool CheckEveryFrame
+        {
+            get { return checkEveryFrame; }
+            set { checkEveryFrame = value; }
+        }
+
+        public TargetType TargetType
+        {
+            get { return targetType; }
+            set { targetType = value; }
+        }
+
+        public double Time
+        {
+            get { return time; }
+            set { time = value; }
+        }
+
+        public int Frame
+        {
+            get { return frame; }
+            set { frame = value; }
+        }
+
+        public string Label
+        {
+            get { return label; }
+            set { label = value; }
+        }
+
+        public ExposedReference<PlayableDirector> PlayableDirector
+        {
+            get { return playableDirector; }
+            set { playableDirector = value; }
+        }
+
+        public ExposedReference<EventTrigger> EventTrigger
+        {
+            get { return eventTrigger; }
+            set { eventTrigger = value; }
+        }
     }
 }

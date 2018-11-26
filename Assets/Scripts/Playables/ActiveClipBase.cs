@@ -22,7 +22,12 @@ namespace ActiveTimeline.Playables
             var playable = ScriptPlayable<T>.Create(graph, Template);
             var behaviour = playable.GetBehaviour();
             behaviour.Label = Label;
+            FillBehaviourProperties(behaviour);
             return playable;
+        }
+
+        protected virtual void FillBehaviourProperties(T behaviour)
+        {
         }
     }
 }
