@@ -6,6 +6,7 @@ namespace ActiveTimeline.Enumerate
         Time,
         Frame,
         Clip,
+        Next,
         First,
         Last,
         PlayableDirector,

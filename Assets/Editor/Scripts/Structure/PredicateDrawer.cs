@@ -16,6 +16,7 @@ namespace ActiveTimeline.Structure
             using (new EditorGUI.PropertyScope(position, label, property))
             {
                 var rect = new Rect(position) {height = EditorGUIUtility.singleLineHeight,};
+                rect.y += EditorGUIUtility.standardVerticalSpacing;
                 EditorGUI.PropertyField(rect, property.FindPropertyRelative("condition"), new GUIContent("Condition"));
                 NewLine(ref rect);
 
@@ -54,6 +55,8 @@ namespace ActiveTimeline.Structure
                         }
 
                         NewLine(ref rect);
+                        break;
+                    case TargetType.Next:
                         break;
                     case TargetType.First:
                         break;

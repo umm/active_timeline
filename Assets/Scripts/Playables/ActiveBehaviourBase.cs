@@ -89,6 +89,9 @@ namespace ActiveTimeline.Playables
                     }
                     ActiveMixerBehaviour.SetTime(ActiveMixerBehaviour.MarkerMap[predicate.Label].StartTime);
                     break;
+                case TargetType.Next:
+                    ActiveMixerBehaviour.SetTime(ActiveMixerBehaviour.MarkerMap[Label].EndTime + 1 / ActiveMixerBehaviour.FrameRate);
+                    break;
                 case TargetType.First:
                     ActiveMixerBehaviour.SetTime(0);
                     break;
