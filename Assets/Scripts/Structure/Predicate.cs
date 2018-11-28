@@ -1,5 +1,8 @@
 using System;
+using ActiveTimeline.Component;
+using ActiveTimeline.Condition;
 using ActiveTimeline.Enumerate;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -7,7 +10,7 @@ namespace ActiveTimeline.Structure
 {
     public interface IPredicate
     {
-        ExposedReference<Condition.Condition> Condition { get; }
+        ExposedReference<ConditionBase> Condition { get; }
         bool CheckEveryFrame { get; }
     }
 
@@ -18,81 +21,86 @@ namespace ActiveTimeline.Structure
         int Frame { get; }
         string Label { get; }
         ExposedReference<PlayableDirector> PlayableDirector { get; }
+        ExposedReference<EventTrigger> EventTrigger { get; }
     }
 
-    [Serializable]
+    [Serializable][PublicAPI]
     public struct Predicate : IPredicate
     {
-        [SerializeField] private ExposedReference<Condition.Condition> condition;
+        [SerializeField] private ExposedReference<ConditionBase> condition;
         [SerializeField] private bool checkEveryFrame;
-        public ExposedReference<Condition.Condition> Condition => condition;
-        public bool CheckEveryFrame => checkEveryFrame;
+
+        public ExposedReference<ConditionBase> Condition
+        {
+            get { return condition; }
+            set { condition = value; }
+        }
+
+        public bool CheckEveryFrame
+        {
+            get { return checkEveryFrame; }
+            set { checkEveryFrame = value; }
+        }
     }
 
-    [Serializable]
+    [Serializable][PublicAPI]
     public struct TransitionablePredicate : ITransitionablePredicate
     {
-        [SerializeField] private ExposedReference<Condition.Condition> condition;
+        [SerializeField] private ExposedReference<ConditionBase> condition;
         [SerializeField] private bool checkEveryFrame;
         [SerializeField] private TargetType targetType;
         [SerializeField] private double time;
         [SerializeField] private int frame;
         [SerializeField] private string label;
         [SerializeField] private ExposedReference<PlayableDirector> playableDirector;
-        public ExposedReference<Condition.Condition> Condition => condition;
-        public bool CheckEveryFrame => checkEveryFrame;
-        public TargetType TargetType => targetType;
-        public double Time => time;
-        public int Frame => frame;
-        public string Label => label;
-        public ExposedReference<PlayableDirector> PlayableDirector => playableDirector;
+        [SerializeField] private ExposedReference<EventTrigger> eventTrigger;
 
-        public static TransitionablePredicate WithTime(ExposedReference<Condition.Condition> condition, double time)
+        public ExposedReference<ConditionBase> Condition
         {
-            return new TransitionablePredicate
-            {
-                targetType = TargetType.Time,
-                condition = condition,
-                time = time,
-            };
+            get { return condition; }
+            set { condition = value; }
         }
 
-        public static TransitionablePredicate WithFrame(ExposedReference<Condition.Condition> condition, int frame)
+        public bool CheckEveryFrame
         {
-            return new TransitionablePredicate
-            {
-                targetType = TargetType.Frame,
-                condition = condition,
-                frame = frame,
-            };
+            get { return checkEveryFrame; }
+            set { checkEveryFrame = value; }
         }
 
-        public static TransitionablePredicate WithClip(ExposedReference<Condition.Condition> condition, string label)
+        public TargetType TargetType
         {
-            return new TransitionablePredicate
-            {
-                targetType = TargetType.Clip,
-                condition = condition,
-                label = label,
-            };
+            get { return targetType; }
+            set { targetType = value; }
         }
 
-        public static TransitionablePredicate First(ExposedReference<Condition.Condition> condition)
+        public double Time
         {
-            return new TransitionablePredicate
-            {
-                targetType = TargetType.First,
-                condition = condition,
-            };
+            get { return time; }
+            set { time = value; }
         }
 
-        public static TransitionablePredicate Last(ExposedReference<Condition.Condition> condition)
+        public int Frame
         {
-            return new TransitionablePredicate
-            {
-                targetType = TargetType.Last,
-                condition = condition,
-            };
+            get { return frame; }
+            set { frame = value; }
+        }
+
+        public string Label
+        {
+            get { return label; }
+            set { label = value; }
+        }
+
+        public ExposedReference<PlayableDirector> PlayableDirector
+        {
+            get { return playableDirector; }
+            set { playableDirector = value; }
+        }
+
+        public ExposedReference<EventTrigger> EventTrigger
+        {
+            get { return eventTrigger; }
+            set { eventTrigger = value; }
         }
     }
 }

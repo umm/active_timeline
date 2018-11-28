@@ -1,10 +1,11 @@
 using ActiveTimeline.Enumerate;
+using ActiveTimeline.Value.Primitive;
 using UnityEngine;
 
 namespace ActiveTimeline.Condition
 {
-    [AddComponentMenu("ActiveTimeline/Primitive/String", (int)ConditionType.String)]
-    public class StringCondition : AssertCondition<string>
+    [AddComponentMenu("ActiveTimeline/Condition/Primitive/String", (int)ConditionType.String)]
+    public class StringCondition : EquatableConditionBase<string, StringValue>
     {
     }
 }

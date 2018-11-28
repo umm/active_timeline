@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace ActiveTimeline.Condition
 {
-    [AddComponentMenu("ActiveTimeline/PointerEvent/Drag", (int)ConditionType.Drag)]
-    public class DragCondition : PointerEventCondition
+    [AddComponentMenu("ActiveTimeline/Condition/PointerEvent/Drag", (int)ConditionType.Drag)]
+    public class DragCondition : PointerEventConditionBase
     {
         [SerializeField] private float thresholdX;
         [SerializeField] private float thresholdY;

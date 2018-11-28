@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "@umm/element_title_attribute": "umm/element_title_attribute#^1.0.0",
+    "@umm/extra_linq": "umm/extra_linq#^1.0.0",
     "@umm/scripts": "umm/scripts#^1.0.0",
     "@umm/unirx": "umm/unirx#^2.0.0",
     "@umm/unirx_tense": "umm/unirx_tense#^1.0.0"

@@ -7,13 +7,12 @@ using UnityEngine.Timeline;
 namespace ActiveTimeline.Playables
 {
     [TrackClipType(typeof(LabelClip))]
-    [TrackClipType(typeof(JumpClip))]
-    [TrackClipType(typeof(SwitchClip))]
-    [TrackClipType(typeof(LoopClip))]
-    [TrackClipType(typeof(WaitClip))]
+    [TrackClipType(typeof(GoToClip))]
     public class ActiveTrack : TrackAsset
     {
-        public Dictionary<string, Marker> MarkerMap { get; private set; }
+        public IDictionary<string, Marker> MarkerMap { get; private set; }
+
+        public ActiveMixerBehaviour ActiveMixerBehaviour { get; private set; }
 
         // CreateTrackMixer は Hierarchy 上の PlayableDirector を選択しているときしか発火しないっぽい
         public override Playable CreateTrackMixer(PlayableGraph graph, GameObject go, int inputCount)
@@ -47,6 +46,8 @@ namespace ActiveTimeline.Playables
             }
 
             MarkerMap = behaviour.MarkerMap;
+
+            ActiveMixerBehaviour = behaviour;
 
             return playable;
         }

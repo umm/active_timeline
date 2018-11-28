@@ -18,7 +18,5 @@ namespace ActiveTimeline.Enumerate
         Drop,
         BeginDrag,
         EndDrag,
-        Timer,
-        Counter,
     }
 }
