@@ -4,7 +4,8 @@
         "umm@extra_linq",
         "umm@unirx",
         "umm@unirx_tense",
-        "umm@element_title_attribute"
+        "umm@element_title_attribute",
+        "Unity.Timeline"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
