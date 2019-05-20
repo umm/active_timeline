@@ -1,7 +1,8 @@
 {
     "name": "umm@active_timeline-Editor",
     "references": [
-        "umm@active_timeline"
+        "umm@active_timeline",
+        "Unity.Timeline"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [
