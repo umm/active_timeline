@@ -3,6 +3,7 @@ using ActiveTimeline.Structure;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using Marker = ActiveTimeline.Structure.Marker;
 
 namespace ActiveTimeline.Playables
 {
