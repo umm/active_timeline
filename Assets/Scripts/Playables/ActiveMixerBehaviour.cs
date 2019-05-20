@@ -4,6 +4,7 @@ using ActiveTimeline.Structure;
 using UniRx;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using Marker = ActiveTimeline.Structure.Marker;
 
 namespace ActiveTimeline.Playables
 {
