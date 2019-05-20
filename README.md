@@ -8,7 +8,7 @@ Originally it will be possible to incorporate functions such as time jumping bas
 
 ## Requirement
 
-* Unity 2018.2
+* Unity 2019.1
 * UniRx
 * [UniRx Tense](https://github.com/umm/unirx_tense)
 
