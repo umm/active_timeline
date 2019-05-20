@@ -1,6 +1,6 @@
 {
   "name": "@umm/active_timeline",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Add some interactive implementation to the Timeline",
   "homepage": "https://github.com/umm/active_timeline",
   "bugs": {
